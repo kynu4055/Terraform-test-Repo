@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed:
 - [AWS CLI](https://aws.amazon.com/cli/) (for managing AWS credentials)
 - An AWS account with IAM permissions to create S3 resources.
 
-## Configuration Steps
+## Configuration 
 
 1. **Clone the repository**:
 
