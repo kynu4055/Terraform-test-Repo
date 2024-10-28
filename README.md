@@ -33,3 +33,12 @@ Before you begin, ensure you have the following installed:
 3. **Initialize the Terraform configuration**:
    ```bash
    terraform init
+4. **Create an execution plan**:
+   ```bash
+   terraform plan
+5. **Apply the configuration**:
+   ```bash
+   terraform apply
+6. **Output values**:
+   ```bash
+   terraform output
