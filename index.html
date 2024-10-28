@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberHunter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow: auto; /* Allow scrolling */
+            position: relative;
+            min-height: 100vh; /* Use min-height for scrolling */
+        }
+
+        .background {
+            position: fixed; /* Keep the background fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 204, 255, 0.7);
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        header {
+            background-color: rgba(30, 30, 47, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #00ccff;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: #00ccff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.5s;
+        }
+
+        .button:hover {
+            background-color: #0088cc;
+        }
+
+        .articles {
+            margin-top: 40px;
+            background-color: rgba(30, 30, 47, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .article {
+            margin: 15px 0;
+        }
+
+        .article h3 {
+            margin: 10px 0;
+            color: #00ccff;
+        }
+
+        footer {
+            background-color: rgba(30, 30, 47, 0.8);
+            padding: 10px;
+            text-align: center;
+            position: relative; /* Allow footer to stay within flow */
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>Welcome to CyberHunter</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="error.html">Error Page</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Explore the Cyber World</h2>
+        <p>Your adventure in cybersecurity begins here!</p>
+        <button class="button" onclick="alert('Get ready to hunt!')">Start Your Journey</button>
+    </div>
+    
+    <!-- Image Section -->
+    <img src="what-is-cybersecurity.jpg" alt="What is Cybersecurity?" />
+
+    <div class="articles">
+        <h2>Latest Articles</h2>
+        <div class="article">
+            <h3>Understanding Phishing Attacks</h3>
+            <p>Learn how phishing works and how to protect yourself from these common threats.</p>
+        </div>
+        <div class="article">
+            <h3>Top 10 Cybersecurity Tips</h3>
+            <p>Explore essential tips to enhance your cybersecurity posture.</p>
+        </div>
+        <div class="article">
+            <h3>The Importance of Strong Passwords</h3>
+            <p>Discover why strong passwords are critical and how to create them.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CyberHunter. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create particles
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.querySelector('.background').appendChild(particle);
+        }
+    </script>
+</body>
+</html>
+

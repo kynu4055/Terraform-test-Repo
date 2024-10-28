@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberHunter - Error</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 204, 255, 0.7);
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        header {
+            background-color: rgba(30, 30, 47, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(30, 30, 47, 0.8);
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .button {
+            background-color: #00ccff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+
+        .button:hover {
+            background-color: #0088cc;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>CyberHunter</h1>
+    </header>
+    <div class="content">
+        <h2>404 - Page Not Found</h2>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <button class="button" onclick="window.location.href='index.html'">Go back to Home</button>
+    </div>
+    <footer>
+        <p>&copy; 2024 CyberHunter. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create particles
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.querySelector('.background').appendChild(particle);
+        }
+    </script>
+</body>
+</html>
+
